@@ -1,0 +1,60 @@
+
+INSERT INTO promociones VALUES ( 12, '4 ordenes x 120 ' );
+INSERT INTO promociones VALUES ( 13, '11111111111111111111' );
+INSERT INTO promociones VALUES ( 14, 'pakete 2' );
+INSERT INTO promociones VALUES ( 15, '5 ordenes x120 de maiz' );
+
+INSERT INTO promociones VALUES ( 16, '11111111111111111111' );
+
+
+
+INSERT INTO promociones VALUES ( 17, 'pakete 3' );
+INSERT INTO promociones VALUES ( 18, '3 gringas por 120' );
+INSERT INTO promociones VALUES ( 19, '11111111111111111' );
+
+
+
+create trigger actualizar_promos
+on promociones
+after update
+as
+begin 
+select + from promociones
+
+where id_nombre >=10;
+end
+
+
+
+create trigger actualizar_promos
+on promociones
+after update
+as
+begin 
+select * from promociones
+
+where id <=10;
+end
+
+create trigger actualizar_promos
+on promociones
+after update
+as
+begin 
+select * from promociones
+
+where id <=10;
+end
+
+
+CREATE TABLE Pedidos (
+    PedidoID int NOT NULL,
+    NumeroPedido int NOT NULL,
+    PersonaID int,
+    PRIMARY KEY (PedidoID),
+    CONSTRAINT FK_precios FOREIGN KEY (PersonaID)
+    REFERENCES precios(PersonaID)
+);
+
+
+
