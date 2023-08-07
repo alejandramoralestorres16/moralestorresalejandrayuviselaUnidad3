@@ -1,0 +1,36 @@
+
+* {
+  
+
+.h1{
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.sub-title{
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.container-all img{
+    width: 80px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.container-all p{
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
