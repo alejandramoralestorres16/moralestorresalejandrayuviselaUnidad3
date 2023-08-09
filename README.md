@@ -36,7 +36,8 @@ VISTA ADMINISTRADOR////
 ![Untitled](https://github.com/alejandramoralestorres16/moralestorresalejandrayuviselaUnidad3/assets/134102451/d8dd0878-8e81-47c4-9ddc-9eabf5cc65b9)
 
 TABLA DE USUARIOS ADMINISTRADOR////
-![Untitled](https://github.com/alejandramoralestorres16/moralestorresalejandrayuviselaUnidad3/assets/134102451/efa7c258-4d11-461f-91e6-27258cb457f5)
+![Untitled](https://github.com/alejandramoralestorres16/moralestorresalejandrayuviselaUnidad3/assets/134102451/21efe68d-6e88-4154-9092-73cb0c4ae6b0)
+
 
 EDITAR USUARIO ////
 ![Untitled](https://github.com/alejandramoralestorres16/moralestorresalejandrayuviselaUnidad3/assets/134102451/a1953ade-8e00-4dcd-82d0-834ecd309d68)
