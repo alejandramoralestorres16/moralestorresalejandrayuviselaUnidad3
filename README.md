@@ -13,7 +13,8 @@ RECUPERAR CONTRASENA///
 
 CORREO CON CONTRASENA NUEVA////
 
-![Untitled](https://github.com/alejandramoralestorres16/moralestorresalejandrayuviselaUnidad3/assets/134102451/59638705-4301-4407-8003-d206f3a9fdb5)
+![Untitled](https://github.com/alejandramoralestorres16/moralestorresalejandrayuviselaUnidad3/assets/134102451/0744c837-00e3-44d4-94d2-6dff0ad99a5a)
+
 
 VISTA USUARIO/////
 
