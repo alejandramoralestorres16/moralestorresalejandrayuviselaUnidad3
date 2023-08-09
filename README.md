@@ -40,16 +40,20 @@ TABLA DE USUARIOS ADMINISTRADOR////
 
 
 EDITAR USUARIO ////
+
 ![Untitled](https://github.com/alejandramoralestorres16/moralestorresalejandrayuviselaUnidad3/assets/134102451/a1953ade-8e00-4dcd-82d0-834ecd309d68)
 
 
 ELIMINAR USUARIO////
+
 ![Untitled](https://github.com/alejandramoralestorres16/moralestorresalejandrayuviselaUnidad3/assets/134102451/35fe7c28-3eb8-4d38-aec8-39318bd1ee7b)
 
 
 EDITAR ALUMNO ///
 
+
 ![Untitled](https://github.com/alejandramoralestorres16/moralestorresalejandrayuviselaUnidad3/assets/134102451/da6cf09f-eb14-4ba9-b42f-0377b477c46f)
+
 
 
 ELIMINAR///
