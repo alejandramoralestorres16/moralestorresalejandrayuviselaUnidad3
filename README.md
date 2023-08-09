@@ -52,7 +52,7 @@ ELIMINAR USUARIO////
 EDITAR ALUMNO ///
 
 
-![Untitled](https://github.com/alejandramoralestorres16/moralestorresalejandrayuviselaUnidad3/assets/134102451/da6cf09f-eb14-4ba9-b42f-0377b477c46f)
+![image](https://github.com/alejandramoralestorres16/moralestorresalejandrayuviselaUnidad3/assets/134102451/fd8efd60-1ab7-4d01-a4e2-fd795b761c02)
 
 
 
