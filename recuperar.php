@@ -90,7 +90,8 @@ require_once 'connect_db.php';
           </li>
         </ul>
       </div>
-      
+    </div>
+	  
     <!-- Right elements -->
   </div>
   <!-- Container wrapper -->
