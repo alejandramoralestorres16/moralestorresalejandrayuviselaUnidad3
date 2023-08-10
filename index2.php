@@ -81,6 +81,7 @@
               <ul class="navbar-nav ml-auto">
                 
 
+		      
           
   <li class="nav-item">   <a class="nav-link" style="color: white;"><i class="fas fa-user"></i>  Bienvenido: <strong><?php echo $_SESSION['user'];?></strong>
   </li>  
@@ -129,6 +130,7 @@
 
     </ul>
 
+	     
       </div>
     </div></a>
     </div>
@@ -181,7 +183,7 @@
 </footer>
 
 
- <!-- MDB -->
+ 
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <!-- Custom scripts -->
   
