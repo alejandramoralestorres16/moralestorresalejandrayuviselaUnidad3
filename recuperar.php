@@ -10,7 +10,8 @@ require_once 'connect_db.php';
     <title>recuperar</title>
     <link rel="icon" href="images/logo.PNG" type="image/x-icon" />
 
-    <!-- Font Awesome -->
+   
+	<!-- Font Awesome -->
     <link
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
   rel="stylesheet"
