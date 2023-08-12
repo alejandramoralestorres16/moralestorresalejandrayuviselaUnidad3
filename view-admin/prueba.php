@@ -25,7 +25,7 @@ include 'cnn.php';
 <html>
 <head>
   <head>
-  <title> || LISTA GRUPOS </title>
+  <title>COBAC || LISTA GRUPOS </title>
 
    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -74,7 +74,7 @@ include 'cnn.php';
 </head>
 <header>
    <!-- Navbar -->
- <nav style="background: #b3ae11" class="navbar navbar-expand-lg  bg-dark navbar-darktext-uppercase fixed-top">
+ <nav style="background: #b3ae11" class="navbar navbar-expand-lg  text-uppercase fixed-top">
   <div class="container-fluid">
     <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold  text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
 
@@ -87,14 +87,14 @@ include 'cnn.php';
 
           
   <li class="nav-item">   <a class="nav-link" style="color: white;"><i class="fas fa-user"></i>  <strong>
-</a>  </strong>
+<?php echo $nombre2; ?></a>  </strong>
   </li>  
           
     <li class="nav-item">   
- <a class="nav-link" href="admin.php"  style="color: white"> <i class="fas fa-home"></i> . </a> </strong>
+ <a class="nav-link" href="index2.php"  style="color: white"> <i class="fas fa-home"></i> . </a> </strong>
   </li> 
-  <li class="nav-item">   
- <a class="nav-link" href="impresiones.php"  style="color: white"><i class="fa fa-arrow-left" aria-hidden="true"></i> . </a> </strong>
+   <li class="nav-item">   
+ <a class="nav-link" href="#" onclick="cerrarSesion()" style="color: white"><i class="fas fa-sign-out-alt"></i> . </a> </strong>
   </li>
                 </ul>
                
@@ -135,7 +135,7 @@ include 'cnn.php';
     <div class="card-body px-lg-2 pt-0">
 
         <!-- Form -->
-        <form class="text-center" style="color: #757575;" action="imprimir_lista.php" method="POST">
+        <form class="text-center" style="color: #757575;" action="prueba.php" method="POST">
 
             <!-- Name -->
             <div class="md-form mt-3">
@@ -148,22 +148,15 @@ include 'cnn.php';
 
             <!-- E-mail -->
             <div class="md-form">
+              <?php  $f1=$_POST['f1'];
+$f2=$_POST['f2'];
+?>    <a class="text-right">Selecciona el inicio de la semana</a>
+    <input class="form-control" type="date" name="f1" required>
+   </br>
+   <a class="text-right">Selecciona el fin de la semana</a>
+
+ <input class="form-control" type="date" name="f2" required ><div>
                
-<?php 
-$select=$cnnPDO->prepare("SELECT * FROM t_grupo");
-$select->execute();
-?>
-<select  class="form-control"  name="grupo" id="">
-    <option value="0">Seleccionar grupo</option>
-<?php while($row=$select->fetch()){
- ?>
-
-<option value="<?php echo $row['grupo'] ?> "><?php echo $row['grupo'] ?></option>
-
-<?php 
-}
-
-?>
   </select>  
 
 
@@ -194,11 +187,16 @@ $select->execute();
   
 if (isset($_POST['buscar'])) 
 {
+  $f1=date("F j, Y, g:i a");
+  $f1=date("F j, Y, g:i a");
     //Trae datos del formulario
-$grupo=$_POST['grupo'];
-$_SESSION['grupo']=$grupo;
-$query = $cnnPDO->prepare( "SELECT matricula, grupo, apellidos,nombre FROM alumnos WHERE grupo =:grupo" );
-$query->bindParam(':grupo',$grupo);
+$f1=$_POST['f1'];
+$f2=$_POST['f2'];
+$_SESSION['f1']=$f1;
+$_SESSION['f2']=$f2;
+$query = $cnnPDO->prepare( "SELECT * FROM riesgo WHERE fecha BETWEEN f1=:f1 AND  f2=:f2" );
+$query->bindParam(':f1',$f1);
+$query->bindParam(':f2',$f2);
 $query->execute();
 
 
@@ -215,9 +213,9 @@ $query->execute();
                        
 
                           <th scope="col" style="color:#FFFFFF;background-color:black;">Grupo</th>
-                           <th scope="col" style="color:#FFFFFF;background-color: black;">Matricula</th>
-                          <th scope="col" style="color:#FFFFFF;background-color: black;">Nombres</th>
-                         
+                           <th scope="col" style="color:#FFFFFF;background-color: black;">NOMBRE</th>
+                          <th scope="col" style="color:#FFFFFF;background-color: black;">FECHA</th>
+                          <th scope="col" style="color:#FFFFFF;background-color: black;">MATERIA</th>
                         
                       </tr>
                   </thead>
@@ -228,9 +226,9 @@ while ($row = $query->fetch()) {
     echo '<tr>';
 
     echo '<td>' . $row['grupo'] . '</td>';
-    echo '<td>' . $row['matricula'] . '</td>';
-    echo '<td >' . $row['apellidos'] . $row['nombre'] .'</td>';
-  
+    echo '<td>' . $row['NOMBRE'] . '</td>';
+    echo '<td >' . $row['FECHA'] . '</td>';
+  echo '<td >' . $row['materia1'] ."-". $row['materia2']."-". $row['materia3']."-". $row['materia4']."-" . $row['materia5'].'</td>';
    
     echo '</tr>';
 }
@@ -240,7 +238,7 @@ while ($row = $query->fetch()) {
 
        </table>
 <center> 
-  <button type="button" name="" class="btn" style="color: red"><a href="pdfgrup.php">GENERAR PDF</button></a>
+  <button type="button" name="" class="btn" style="color: red"><a href="generalRiesgo.php">GENERAR PDF</button></a>
       </center>   
       </div>
       </div>
@@ -272,7 +270,23 @@ while ($row = $query->fetch()) {
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script type="text/javascript">
 
-
+  function cerrarSesion(){
+   Swal.fire({
+  title: '¿Estas seguro de querer cerrar tu sesión?',
+  text: "Tendras que iniciar sesión nuevamente!!!",
+  background: 'white',
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#1F5003',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Cerrar sesión',
+  cancelButtonText: 'Cancelar'
+}).then((result) => {
+  if (result.isConfirmed) {
+    window.location = "logout.php";
+  }
+})
+  };
 </script>
 
 

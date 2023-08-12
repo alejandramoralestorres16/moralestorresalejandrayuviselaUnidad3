@@ -4,7 +4,9 @@ session_start();
 if (@!$_SESSION['user']) {
 	header("Location:../login.php");
 }elseif ($_SESSION['rol']==2) {
-	header("Location:view-u/index2.php");
+	header("Location:../index2.php");
+  ob_end_flush();
+    exit(); // As
 }
 ?>
 <!DOCTYPE html>
@@ -80,14 +82,18 @@ if (@!$_SESSION['user']) {
               <ul class="navbar-nav ml-auto">
                 
 
-          
+              <li class="nav-item">   
+ <a class="nav-link"  href="../view-admin/usadmi.php" style="color: white"><i class="fas fa-user-plus"></i>  </a> </strong>
+  </li> 
   <li class="nav-item">   <a class="nav-link" style="color: white;"><i class="fas fa-user"></i>  Bienvenido: <strong><?php echo $_SESSION['user'];?></strong>
   </li>  
-          
+
     <li class="nav-item">   
- <a class="nav-link"  onclick="cerrarSesion()" style="color: white"><i class="fas fa-sign-out-alt"></i> . </a> </strong>
+ <a class="nav-link"  onclick="cerrarSesion()" style="color: white"><i class="fas fa-sign-out-alt"></i> </a> </strong>
   </li> 
+  
                 </ul>
+                
                
             </div>
         </div>
@@ -112,7 +118,6 @@ if (@!$_SESSION['user']) {
       
 
       />
-
         
      <div class="text-center">
   
@@ -258,4 +263,3 @@ if (@!$_SESSION['user']) {
 
 
 </body>
-</html>

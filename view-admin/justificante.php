@@ -22,7 +22,7 @@ require_once 'cdn.html';
 <!DOCTYPE html>
 <html>
 <head>
-  <title>COBAC ||  Justificante </title>
+  <title> ||  Justificante </title>
 
    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -216,8 +216,8 @@ body{
     <li class="nav-item">   
  <a class="nav-link" href="admin.php"  style="color: white"> <i class="fas fa-home"></i> . </a> </strong>
   </li> 
-   <li class="nav-item">   
- <a class="nav-link" href="#" onclick="cerrarSesion()" style="color: white"><i class="fas fa-sign-out-alt"></i> . </a> </strong>
+  <li class="nav-item">   
+ <a class="nav-link" href="accionesdealumnos.php"  style="color: white"><i class="fa fa-arrow-left" aria-hidden="true"></i> . </a> </strong>
   </li>
                 </ul>
                

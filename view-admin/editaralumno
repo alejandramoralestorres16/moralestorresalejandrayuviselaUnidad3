@@ -1,0 +1,525 @@
+<?php
+session_start();
+?>
+<?php
+
+
+  include("cnn.php");
+
+  if (isset($_POST['boton'])) 
+  {
+   
+    $grupo=$_POST['grupo'];
+    $matricula=$_POST['matricula'];
+    $semestre=$_POST['semestre'];
+    
+
+    if ($matricula!=""|| $grupo!=""|| $semestre!="") 
+    {
+      # code...
+
+
+        $sql=$cnnPDO->prepare("UPDATE alumnos SET matricula='$matricula', grupo='$grupo', semestre='$semestre' WHERE matricula='$matricula'");
+
+           
+            $sql->bindParam(':grupo',$grupo);
+            $sql->bindParam(':matricula',$matricula);
+            $sql->bindParam(':semestre',$semestre);
+
+        $sql->execute();
+
+            $count=$sql->rowCount();
+
+            if ($count) 
+            {
+              ?>
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+                <script src="js/swalregistro.js"></script>
+              <?php 
+
+
+
+            }
+            }}
+      
+              ?>
+<?php
+include 'cnn.php';
+
+
+          $sql=$cnnPDO->prepare('SELECT * FROM administradores WHERE usuario = :usuario');
+
+            $sql->bindParam(':usuario', $_SESSION['usuario']);
+            $sql->execute();
+            
+              $results = $sql -> fetchAll(PDO::FETCH_OBJ);
+
+              foreach ($results as $dato) {
+                
+                $nombre2 = $dato -> nombre;
+           
+                
+}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Conalep II | Reinscribir </title>
+
+   <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <!-- MDB icon -->
+   <link rel="icon" href="img/Conalep-logo.png" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    />
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+  <!-- MDB icon -->
+  <link rel="icon" href="img/ico.ico" type="image/x-icon" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+  <!-- Google Fonts Roboto -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+
+  <link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+  />
+  <!-- MDB -->
+  <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <!-- MDB icon -->
+    <link rel="icon" href="img/ima.png" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- Custom styles -->
+
+    <meta charset="utf-8" />
+
+
+
+    <!-- MDB 4.19.0 -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="assets/js/jquery-ui/jquery-ui.min.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <!-- Custom styles -->
+       <style type="text/css">
+
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+ background-color: red;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+background-color: red;
+}
+.form .message {
+  margin: 30px 0 0;
+  color: black;
+  font-size: 12px;
+}
+.form .message a {
+  color: purple;
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #EF3B3A;
+}
+body{
+        background-image: url(img/green.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed; 
+}
+</style>
+</head>
+<body>
+   <!-- Navbar -->
+  <nav style=" background-image: url(img/nvar.jpg)" class="navbar navbar-expand-lg navbar-light  fixed-top">
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarExample01"
+        aria-controls="navbarExample01"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarExample01">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+           <li class="nav-item">
+            <img src="img/logo.jpg"height="40"alt=""loading="lazy"/>
+          </li>
+          <li class="nav-item active bg-purple">
+            <a class="nav-link" aria-current="page">Conalep Saltillo II</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+        
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+             <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>  <li class="nav-item"> <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>     
+<li class="nav-item">
+            <img src="img/user.png"height="37"alt=""loading="lazy"/>
+          </li>   <strong>
+ <li class="nav-item">  <a class="nav-link" style="color: black">
+<?php echo $nombre2; ?></a>   </strong>
+          </li>  <li class="nav-item">
+         <strong>
+ <a class="nav-link" href="accionesdealumnos.php" style="color: red">Volver</a>   </strong>
+  </li> 
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<form  method="post">
+<div class="login-page">
+  <div class="form">
+     <form  method="post" class="login-form">
+   
+ <img src="img/logo.jpg"height="50"alt=""loading="lazy"/>
+<br><br>
+   
+      <input type="text" name="matricula" placeholder="Matricula del alumno" value="" />
+      
+      <br> 
+
+      <label>Nuevo grupo del alumno</label>
+  <select name="grupo">
+      <option value="no">Seleccione uno...</option>
+      <option value="101">101</option>
+      <option value="102">102</option>
+      <option value="103">103</option>
+      <option value="104">104</option>
+      <option value="105">105</option>
+      <option value="106">106</option>
+      <option value="107">107</option>
+      <option value="108">108</option>
+      <option value="109">109</option>
+      <option value="110">110</option>
+      <option value="111">111</option>
+      
+      <option value="201">201</option>
+      <option value="202">202</option>
+      <option value="203">203</option>
+      <option value="204">204</option>
+      <option value="205">205</option>
+      <option value="206">206</option>
+      <option value="207">207</option>
+      <option value="208">208</option>
+      <option value="209">209</option>
+      <option value="210">210</option>
+      <option value="211">211</option>
+
+      <option value="301">301</option>
+      <option value="302">302</option>
+      <option value="303">303</option>
+      <option value="304">304</option>
+      <option value="305">305</option>
+      <option value="306">306</option>
+      <option value="307">307</option>
+      <option value="308">308</option>
+      <option value="309">309</option>
+      <option value="310">310</option>
+      <option value="311">311</option>
+
+      <option value="401">401</option>
+      <option value="402">402</option>
+      <option value="403">403</option>
+      <option value="404">404</option>
+      <option value="405">405</option>
+      <option value="406">406</option>
+      <option value="407">407</option>
+      <option value="408">408</option>
+      <option value="409">409</option>
+      <option value="410">410</option>
+      <option value="411">411</option>
+
+
+      <option value="501">501</option>
+      <option value="502">502</option>
+      <option value="503">503</option>
+      <option value="504">504</option>
+      <option value="505">505</option>
+      <option value="506">506</option>
+      <option value="507">507</option>
+      <option value="508">508</option>
+      <option value="509">509</option>
+      <option value="510">510</option>
+      <option value="511">511</option>
+
+      <option value="601">601</option>
+      <option value="602">602</option>
+      <option value="603">603</option>
+      <option value="604">604</option>
+      <option value="605">605</option>
+      <option value="606">606</option>
+      <option value="607">607</option>
+      <option value="608">608</option>
+      <option value="609">609</option>
+      <option value="610">610</option>
+      <option value="611">611</option>
+     
+     
+  </select>
+<br>   <br>
+      <label>Semestre del alumno</label>
+  <select name="semestre">
+      <option value="no">Seleccione uno...</option>
+      <option value="Primero">Primero</option>
+      <option value="Segundo">Segundo</option>
+      <option value="Tercero">Tercero</option>
+      <option value="Cuarto">Cuarto</option>
+      <option value="Quinto">Quinto</option>
+      <option value="Sexto">Sexto</option>
+     
+     
+  </select>
+
+      
+   
+      <br>   <br>
+       
+   
+       
+
+<button type="submit" name="boton" style="color: white; border-color: black; background-color: red" class="btn btn-outline-dark btn-fluid">REINSCRIBIR ALUMNO </button>
+
+    </form>
+  </div>
+</div>
+
+
+
+     <footer class="text-center text-white">
+  <!-- Grid container -->
+
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center" style="color: white">
+    © 2021 Developed by: Jonathan Jared Salazar Viera 
+    
+  </div>
+  <br>
+  <!-- Copyright -->
+</footer>
+
+
+
+  <!-- MDB -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Custom scripts -->
+  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+ 
+
+
+</body>
+</html>

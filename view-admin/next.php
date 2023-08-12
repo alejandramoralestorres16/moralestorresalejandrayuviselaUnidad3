@@ -71,7 +71,7 @@ if (isset($_POST['riesgo'])) {
 <html>
 <head>
   <head>
-  <title>|| Agregar alumnos en riesgo </title>
+  <title>COBAC || Agregar alumnos en riesgo </title>
 
    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -131,7 +131,7 @@ if (isset($_POST['riesgo'])) {
 </head>
 <header>
    <!-- Navbar -->
- <nav style="background: #b3ae11" class="navbar navbar-expand-lg  bg-dark navbar-dark text-uppercase fixed-top">
+ <nav style="background: #b3ae11" class="navbar navbar-expand-lg  text-uppercase fixed-top">
   <div class="container-fluid">
     <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold  text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
 
@@ -144,13 +144,16 @@ if (isset($_POST['riesgo'])) {
 
           
   <li class="nav-item">   <a class="nav-link" style="color: white;"><i class="fas fa-user"></i>  <strong>
-</a>  </strong>
+<?php echo $nombre2; ?></a>  </strong>
   </li>  
           
     <li class="nav-item">   
- <a class="nav-link" href="admin.php"  style="color: white"> <i class="fas fa-home"></i> . </a> </strong>
+ <a class="nav-link" href="index2.php"  style="color: white"> <i class="fas fa-home"></i> . </a> </strong>
   </li> 
-         </ul>
+   <li class="nav-item">   
+ <a class="nav-link" href="#" onclick="cerrarSesion()" style="color: white"><i class="fas fa-sign-out-alt"></i> . </a> </strong>
+  </li>
+                </ul>
                
             </div>
         </div>
@@ -176,12 +179,11 @@ if (isset($_POST['riesgo'])) {
 
   <!-- Accordion card -->
   <div class="card">
- 
+
+    <!-- Card header -->
     <div class="card-header" role="tab" id="headingOne1">
       <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
         aria-controls="collapseOne1">
-        <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
-    <!-- Card header -->
         <h5 class="mb-0">
           1 A <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
@@ -201,7 +203,7 @@ $select->execute();
   <!-- Stack the columns on mobile by making one full-width and the other half-width -->
   <div class="row">
     <div class="col col-md-8">
-    <select class="form-control"  name="carrera" id="">
+    <select class="form-control"  name="grupo" id="">
 <option value="TC"> TC </option>
 </select>  
     </div>
@@ -336,7 +338,7 @@ $select->execute();
   </div>
       </div>
     </div>
-</form>
+
   </div>
   <!-- Accordion card -->
 
@@ -345,9 +347,8 @@ $select->execute();
 
     <!-- Card header -->
     <div class="card-header" role="tab" id="headingTwo2">
-       
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2"
-        aria-expanded="false" aria-controls="collapseTwo2"><form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
+        aria-expanded="false" aria-controls="collapseTwo2">
         <h5 class="mb-0">
         1 B <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
@@ -501,7 +502,7 @@ $select->execute();
     </div>
   </div>
     
-</form>
+
 
      
       </div>
@@ -517,7 +518,6 @@ $select->execute();
 
     <!-- Card header -->
     <div class="card-header" role="tab" id="headingThree3">
-       <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3"
         aria-expanded="false" aria-controls="collapseThree3">
         <h5 class="mb-0">
@@ -665,7 +665,7 @@ $select->execute();
     </div>
   </div>
     
-</form>
+
 
       </div>
       </div>
@@ -677,7 +677,6 @@ $select->execute();
 
     <!-- Card header -->
     <div class="card-header" role="tab" id="headingThree3">
-       <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree4"
         aria-expanded="false" aria-controls="collapseThree3">
         <h5 class="mb-0">
@@ -833,7 +832,7 @@ $select->execute();
     </div>
   </div>
     
-</form>
+
 
       </div>
       </div>
@@ -854,7 +853,6 @@ $select->execute();
 
     <!-- Card header -->
     <div class="card-header" role="tab" id="headingOne4">
-       <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
       <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne4" aria-expanded="true"
         aria-controls="collapseOne4">
         <h5 class="mb-0">
@@ -1009,7 +1007,7 @@ $select->execute();
       <button class="btn btn-outline-lime btn-rounded btn-block z-depth-0 my-3 waves-effect" type="submit"  name="riesgo">GENERAR</button>
     </div>
   </div>
-    </form>
+    
       </div>
     </div>
 
@@ -1018,11 +1016,11 @@ $select->execute();
 
   <!-- Accordion card -->
   <div class="card">
- 
+
     <!-- Card header -->
     <div class="card-header" role="tab" id="headingTwo5">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo5"
-        aria-expanded="false" aria-controls="collapseTwo5"><form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
+        aria-expanded="false" aria-controls="collapseTwo5">
         <h5 class="mb-0">
           1 F <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
@@ -1034,7 +1032,7 @@ $select->execute();
         <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='1F'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='1E'");
 $select->execute();
 ?>
 <div class="container">
@@ -1047,7 +1045,7 @@ $select->execute();
     </div>
     <div class="col-6 col-md-4">
 <select class="form-control"  name="grupo" id="">
-<option value="1F"> 1F </option>
+<option value="1E"> 1F </option>
 </select>
     </div>
   </div>
@@ -1174,7 +1172,7 @@ $select->execute();
       <button class="btn btn-outline-lime btn-rounded btn-block z-depth-0 my-3 waves-effect" type="submit"  name="riesgo">GENERAR</button>
     </div>
   </div>
-    </form>
+    
         
               </div>
     </div>
@@ -1189,7 +1187,6 @@ $select->execute();
     <div class="card-header" role="tab" id="headingTwo2">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo5"
         aria-expanded="false" aria-controls="collapseTwo5">
-         <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
           1 G <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
@@ -1335,7 +1332,7 @@ $select->execute();
     </div>
   </div>
     
-      </form>
+        
               </div>
     </div>
 
@@ -1346,7 +1343,6 @@ $select->execute();
 
     <!-- Card header -->
     <div class="card-header" role="tab" id="headingThree6">
-       <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree6"
         aria-expanded="false" aria-controls="collapseThree6">
         <h5 class="mb-0">
@@ -1501,7 +1497,7 @@ $select->execute();
       <button class="btn btn-outline-lime btn-rounded btn-block z-depth-0 my-3 waves-effect" type="submit"  name="riesgo">GENERAR</button>
     </div>
   </div>
-    </form>
+    
         
       </div>
     </div>
@@ -1522,7 +1518,6 @@ $select->execute();
 
     <!-- Card header -->
     <div class="card-header" role="tab" id="headingOne1">
-       <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
       <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne7" aria-expanded="true"
         aria-controls="collapseOne7">
         <h5 class="mb-0">
@@ -1537,7 +1532,7 @@ $select->execute();
          <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='1I'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='1H'");
 $select->execute();
 ?>
 <div class="container">
@@ -1677,7 +1672,7 @@ $select->execute();
       <button class="btn btn-outline-lime btn-rounded btn-block z-depth-0 my-3 waves-effect" type="submit"  name="riesgo">GENERAR</button>
     </div>
   </div>
-    </form>
+    
       </div>
     </div>
 
@@ -1689,7 +1684,6 @@ $select->execute();
 
     <!-- Card header -->
     <div class="card-header" role="tab" id="headingTwo8">
-       <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo8"
         aria-expanded="false" aria-controls="collapseTwo8">
         <h5 class="mb-0">
@@ -1703,7 +1697,7 @@ $select->execute();
              <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='1J'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='1I'");
 $select->execute();
 ?>
 <div class="container">
@@ -1845,7 +1839,7 @@ $select->execute();
     </div>
   </div>
 
-      </form>
+       
       </div>
     </div>
 
@@ -1856,7 +1850,7 @@ $select->execute();
   <div class="card">
 
     <!-- Card header -->
-    <div class="card-header" role="tab" id="headingThree9"> <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
+    <div class="card-header" role="tab" id="headingThree9">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree9"
         aria-expanded="false" aria-controls="collapseThree9">
         <h5 class="mb-0">
@@ -2010,7 +2004,7 @@ $select->execute();
       <button class="btn btn-outline-lime btn-rounded btn-block z-depth-0 my-3 waves-effect" type="submit"  name="riesgo">GENERAR</button>
     </div>
   </div>
-    </form>
+    
       </div>
     </div>
 
@@ -2022,7 +2016,6 @@ $select->execute();
 
     <!-- Card header -->
     <div class="card-header" role="tab" id="headingThree10">
-       <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree10"
         aria-expanded="false" aria-controls="collapseThree10">
         <h5 class="mb-0">
@@ -2204,8 +2197,6 @@ $select->execute();
     <div class="card-header" role="tab" id="headingOne13">
       <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne13" aria-expanded="true"
         aria-controls="collapseOne13">
-
-         <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
           3A <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
@@ -2362,7 +2353,7 @@ $select->execute();
     </div>
   </div>
     
-</form>
+
 
      
       </div>
@@ -2377,8 +2368,7 @@ $select->execute();
     <!-- Card header -->
     <div class="card-header" role="tab" id="headingTwo14">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo14"
-        aria-expanded="false" aria-controls="collapseTwo14"> 
-         <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
+        aria-expanded="false" aria-controls="collapseTwo14">
         <h5 class="mb-0">
         3 B <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
@@ -2535,7 +2525,7 @@ $select->execute();
     </div>
   </div>
     
-</form>
+
 
      
       </div>
@@ -2553,8 +2543,6 @@ $select->execute();
     <div class="card-header" role="tab" id="headingThree15">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree15"
         aria-expanded="false" aria-controls="collapseThree15">
-
-         <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
           3 C <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
@@ -2707,7 +2695,7 @@ $select->execute();
     </div>
   </div>
     
-</form>
+
 
       </div>
       </div>
@@ -2720,10 +2708,8 @@ $select->execute();
     <!-- Card header -->
     <div class="card-header" role="tab" id="headingThree16">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree16"
-        aria-expanded="false" aria-controls="collapseThree16"> <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
+        aria-expanded="false" aria-controls="collapseThree16">
         <h5 class="mb-0">
-          
-           <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
           3D <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
@@ -2874,7 +2860,7 @@ $select->execute();
       <button class="btn btn-outline-lime btn-rounded btn-block z-depth-0 my-3 waves-effect" type="submit"  name="riesgo">GENERAR</button>
     </div>
   </div>
-    </form>
+    
 
 
       </div>
@@ -2896,7 +2882,6 @@ $select->execute();
 
     <!-- Card header -->
     <div class="card-header" role="tab" id="headingOne17">
-       <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
       <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne17" aria-expanded="true"
         aria-controls="collapseOne4">
         <h5 class="mb-0">
@@ -3049,7 +3034,7 @@ $select->execute();
       <button class="btn btn-outline-lime btn-rounded btn-block z-depth-0 my-3 waves-effect" type="submit"  name="riesgo">GENERAR</button>
     </div>
   </div>
-    </form>
+    
       </div>
     </div>
 
@@ -3063,7 +3048,6 @@ $select->execute();
     <div class="card-header" role="tab" id="headingTwo18">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo18"
         aria-expanded="false" aria-controls="collapseTwo18">
-         <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
           3 F <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
@@ -3215,7 +3199,7 @@ $select->execute();
     </div>
   </div>
     
-        </form>
+        
               </div>
     </div>
 
@@ -3228,9 +3212,8 @@ $select->execute();
     <!-- Card header -->
     <div class="card-header" role="tab" id="headingTwo19">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo19"
-        aria-expanded="false" aria-controls="collapseTwo19"><form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
+        aria-expanded="false" aria-controls="collapseTwo19">
         <h5 class="mb-0">
-           
           3 G <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
@@ -3387,7 +3370,7 @@ $select->execute();
     </div>
   </div>
     
-        </form>
+        
               </div>
     </div>
 
@@ -3400,7 +3383,6 @@ $select->execute();
     <div class="card-header" role="tab" id="headingThree20">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree20"
         aria-expanded="false" aria-controls="collapseThree20">
-         <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
           3 H <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
@@ -3555,7 +3537,7 @@ $select->execute();
     </div>
   </div>
     
-       </form> 
+        
       </div>
     </div>
 
@@ -3577,7 +3559,6 @@ $select->execute();
     <div class="card-header" role="tab" id="headingOne21">
       <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne21" aria-expanded="true"
         aria-controls="collapseOne21">
-         <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
           3 I <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
@@ -3731,7 +3712,7 @@ $select->execute();
       <button class="btn btn-outline-lime btn-rounded btn-block z-depth-0 my-3 waves-effect" type="submit"  name="riesgo">GENERAR</button>
     </div>
   </div>
-    </form>
+    
       </div>
     </div>
 
@@ -3744,9 +3725,8 @@ $select->execute();
     <!-- Card header -->
     <div class="card-header" role="tab" id="headingTwo22">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo22"
-        aria-expanded="false" aria-controls="collapseTwo22"> <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
+        aria-expanded="false" aria-controls="collapseTwo22">
         <h5 class="mb-0">
-          
           3 J <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
@@ -3899,7 +3879,7 @@ $select->execute();
       <button class="btn btn-outline-lime btn-rounded btn-block z-depth-0 my-3 waves-effect" type="submit"  name="riesgo">GENERAR</button>
     </div>
   </div>
-</form>
+
        
       </div>
     </div>
@@ -3931,9 +3911,7 @@ $select->execute();
     <div class="card-header" role="tab" id="headingOne23">
       <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne23" aria-expanded="true"
         aria-controls="collapseOne23">
-      <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
-          
           5 A <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
@@ -4085,7 +4063,7 @@ $select->execute();
     </div>
   </div>
     
-</form>
+
 
      
       </div>
@@ -4099,7 +4077,6 @@ $select->execute();
 
     <!-- Card header -->
     <div class="card-header" role="tab" id="headingTwo24">
-       <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo24"
         aria-expanded="false" aria-controls="collapseTwo24">
         <h5 class="mb-0">
@@ -4129,7 +4106,7 @@ $select->execute();
     </div>
     <div class="col-sm-4">
 <select class="form-control"  name="grupo" id="">
-<option value="5B"> 5B </option>
+<option value="5A"> 5B </option>
 </select>
 </div>
   </div>
@@ -4258,7 +4235,7 @@ $select->execute();
     </div>
   </div>
     
-</form>
+
 
      
       </div>
@@ -4276,7 +4253,6 @@ $select->execute();
     <div class="card-header" role="tab" id="headingThree25">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree25"
         aria-expanded="false" aria-controls="collapseThree25">
-         <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
           5 C <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
@@ -4431,7 +4407,7 @@ $select->execute();
     </div>
   </div>
     
-</form>
+
 
       </div>
       </div>
@@ -4445,7 +4421,6 @@ $select->execute();
     <div class="card-header" role="tab" id="headingThree26">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree26"
         aria-expanded="false" aria-controls="collapseThree26">
-         <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
           5D <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
@@ -4600,7 +4575,7 @@ $select->execute();
     </div>
   </div>
     
-</form>
+
 
       </div>
       </div>
@@ -4622,9 +4597,8 @@ $select->execute();
     <!-- Card header -->
     <div class="card-header" role="tab" id="headingOne27">
       <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne27" aria-expanded="true"
-        aria-controls="collapseOne27"> <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
+        aria-controls="collapseOne27">
         <h5 class="mb-0">
-          
            5 E <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
@@ -4775,7 +4749,7 @@ $select->execute();
       <button class="btn btn-outline-lime btn-rounded btn-block z-depth-0 my-3 waves-effect" type="submit"  name="riesgo">GENERAR</button>
     </div>
   </div>
-    </form>
+    
       </div>
     </div>
 
@@ -4788,9 +4762,8 @@ $select->execute();
     <!-- Card header -->
     <div class="card-header" role="tab" id="headingTwo28">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo28"
-        aria-expanded="false" aria-controls="collapseTwo28"><form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
+        aria-expanded="false" aria-controls="collapseTwo28">
         <h5 class="mb-0">
-           
           5 F <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
@@ -4943,7 +4916,7 @@ $select->execute();
     </div>
   </div>
     
-        </form>
+        
               </div>
     </div>
 
@@ -4957,9 +4930,7 @@ $select->execute();
     <div class="card-header" role="tab" id="headingTwo29">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo29"
         aria-expanded="false" aria-controls="collapseTwo29">
-         <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
-
           5 G <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
@@ -5112,7 +5083,7 @@ $select->execute();
       <button class="btn btn-outline-lime btn-rounded btn-block z-depth-0 my-3 waves-effect" type="submit"  name="riesgo">GENERAR</button>
     </div>
   </div>
-    </form>
+    
         
               </div>
     </div>
@@ -5126,7 +5097,6 @@ $select->execute();
     <div class="card-header" role="tab" id="headingThree30">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree30"
         aria-expanded="false" aria-controls="collapseThree30">
-         <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
           5 H <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
@@ -5280,7 +5250,7 @@ $select->execute();
     </div>
   </div>
     
-      </form>
+        
       </div>
     </div>
 
@@ -5301,7 +5271,7 @@ $select->execute();
     <!-- Card header -->
     <div class="card-header" role="tab" id="headingOne31">
       <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne31" aria-expanded="true"
-        aria-controls="collapseOne31"> <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
+        aria-controls="collapseOne31">
         <h5 class="mb-0">
           5 I <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
@@ -5456,7 +5426,7 @@ $select->execute();
       <button class="btn btn-outline-lime btn-rounded btn-block z-depth-0 my-3 waves-effect" type="submit"  name="riesgo">GENERAR</button>
     </div>
   </div>
-    </form>
+    
       </div>
     </div>
 
@@ -5470,7 +5440,6 @@ $select->execute();
     <div class="card-header" role="tab" id="headingTwo32">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo32"
         aria-expanded="false" aria-controls="collapseTwo32">
-         <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
           5 J <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
@@ -5626,7 +5595,7 @@ $select->execute();
     </div>
   </div>
 
-       </form>
+       
       </div>
     </div>
 

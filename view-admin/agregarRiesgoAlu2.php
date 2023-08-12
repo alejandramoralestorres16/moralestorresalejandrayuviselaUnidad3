@@ -71,7 +71,7 @@ if (isset($_POST['riesgo'])) {
 <html>
 <head>
   <head>
-  <title>|| Agregar alumnos en riesgo </title>
+  <title>COBAC || Agregar alumnos en riesgo </title>
 
    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -131,7 +131,7 @@ if (isset($_POST['riesgo'])) {
 </head>
 <header>
    <!-- Navbar -->
- <nav style="background: #b3ae11" class="navbar navbar-expand-lg  bg-dark navbar-dark text-uppercase fixed-top">
+ <nav style="background: #b3ae11" class="navbar navbar-expand-lg  text-uppercase fixed-top">
   <div class="container-fluid">
     <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold  text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
 
@@ -144,13 +144,16 @@ if (isset($_POST['riesgo'])) {
 
           
   <li class="nav-item">   <a class="nav-link" style="color: white;"><i class="fas fa-user"></i>  <strong>
-</a>  </strong>
+<?php echo $nombre2; ?></a>  </strong>
   </li>  
           
     <li class="nav-item">   
- <a class="nav-link" href="admin.php"  style="color: white"> <i class="fas fa-home"></i> . </a> </strong>
+ <a class="nav-link" href="index2.php"  style="color: white"> <i class="fas fa-home"></i> . </a> </strong>
   </li> 
-         </ul>
+   <li class="nav-item">   
+ <a class="nav-link" href="#" onclick="cerrarSesion()" style="color: white"><i class="fas fa-sign-out-alt"></i> . </a> </strong>
+  </li>
+                </ul>
                
             </div>
         </div>
@@ -183,7 +186,7 @@ if (isset($_POST['riesgo'])) {
         <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
     <!-- Card header -->
         <h5 class="mb-0">
-          1 A <i class="fas fa-angle-down rotate-icon"></i>
+          2 A <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -193,7 +196,7 @@ if (isset($_POST['riesgo'])) {
       <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE	grupo='1A'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE	grupo='2A'");
 $select->execute();
 ?>
 
@@ -207,7 +210,7 @@ $select->execute();
     </div>
     <div class="col-6 col-md-4">
     <select class="form-control"  name="grupo" id="">
-<option value="1A"> 1A </option>
+<option value="2A">2A </option>
 </select>
     </div>
   </div>
@@ -349,7 +352,7 @@ $select->execute();
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2"
         aria-expanded="false" aria-controls="collapseTwo2"><form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
-        1 B <i class="fas fa-angle-down rotate-icon"></i>
+        2 B <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -360,7 +363,7 @@ $select->execute();
       <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='1B'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='2B'");
 $select->execute();
 ?>
 <div class="container">
@@ -373,7 +376,7 @@ $select->execute();
     </div>
     <div class="col-6 col-md-4">
 <select class="form-control"  name="grupo" id="">
-<option value="1B"> 1B </option>
+<option value="2B"> 2B </option>
 </select>
 <br>  
     </div>
@@ -521,7 +524,7 @@ $select->execute();
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3"
         aria-expanded="false" aria-controls="collapseThree3">
         <h5 class="mb-0">
-          1 C <i class="fas fa-angle-down rotate-icon"></i>
+          2 C <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -532,7 +535,7 @@ $select->execute();
       <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='1C'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='2C'");
 $select->execute();
 ?>
 <select class="form-control"  name="carrera" id="">
@@ -540,7 +543,7 @@ $select->execute();
 </select>
  <br> 
 <select class="form-control"  name="grupo" id="">
-<option value="1C"> 1C </option>
+<option value="2C"> 2C </option>
 </select>
 <br>
 <select class="form-control"  name="nombre" id="">
@@ -681,7 +684,7 @@ $select->execute();
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree4"
         aria-expanded="false" aria-controls="collapseThree3">
         <h5 class="mb-0">
-          1D <i class="fas fa-angle-down rotate-icon"></i>
+          2 D <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -692,7 +695,7 @@ $select->execute();
       <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='1D'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='2D'");
 $select->execute();
 ?>
 <div class="container">
@@ -705,7 +708,7 @@ $select->execute();
     </div>
     <div class="col-6 col-md-4">
       <select class="form-control"  name="grupo" id="">
-<option value="1D"> 1D </option>
+<option value="2D"> 2D </option>
 </select>
     </div>
   </div>
@@ -858,7 +861,7 @@ $select->execute();
       <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne4" aria-expanded="true"
         aria-controls="collapseOne4">
         <h5 class="mb-0">
-          1 E <i class="fas fa-angle-down rotate-icon"></i>
+          2 E <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -868,7 +871,7 @@ $select->execute();
         <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='1E'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='2E'");
 $select->execute();
 ?>
 <div class="container">
@@ -881,7 +884,7 @@ $select->execute();
     </div>
     <div class="col-6 col-md-4">
     <select class="form-control"  name="grupo" id="">
-<option value="1E"> 1E </option>
+<option value="2E"> 2E </option>
 </select>
     </div>
   </div>
@@ -1024,7 +1027,7 @@ $select->execute();
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo5"
         aria-expanded="false" aria-controls="collapseTwo5"><form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
-          1 F <i class="fas fa-angle-down rotate-icon"></i>
+          2 F <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -1034,7 +1037,7 @@ $select->execute();
         <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='1F'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='2F'");
 $select->execute();
 ?>
 <div class="container">
@@ -1047,7 +1050,7 @@ $select->execute();
     </div>
     <div class="col-6 col-md-4">
 <select class="form-control"  name="grupo" id="">
-<option value="1F"> 1F </option>
+<option value="2F"> 2F </option>
 </select>
     </div>
   </div>
@@ -1191,7 +1194,7 @@ $select->execute();
         aria-expanded="false" aria-controls="collapseTwo5">
          <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
-          1 G <i class="fas fa-angle-down rotate-icon"></i>
+          2 G <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -1201,7 +1204,7 @@ $select->execute();
         <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='1G'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='2G'");
 $select->execute();
 ?>
 <select class="form-control"  name="carrera" id="">
@@ -1210,7 +1213,7 @@ $select->execute();
 </select>
  <br> 
 <select class="form-control"  name="grupo" id="">
-<option value="1G"> 1G </option>
+<option value="2G"> 2G </option>
 </select>
 <br>
 <select class="form-control"  name="nombre" id="">
@@ -1350,7 +1353,7 @@ $select->execute();
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree6"
         aria-expanded="false" aria-controls="collapseThree6">
         <h5 class="mb-0">
-          1 H <i class="fas fa-angle-down rotate-icon"></i>
+          2 H <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -1360,7 +1363,7 @@ $select->execute();
        <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='1H'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='2H'");
 $select->execute();
 ?>
 <div class="container">
@@ -1373,7 +1376,7 @@ $select->execute();
     </div>
     <div class="col-6 col-md-4">
 <select class="form-control"  name="grupo" id="">
-<option value="1H"> 1H</option>
+<option value="2H"> 2H</option>
 </select>
     </div>
   </div>
@@ -1526,7 +1529,7 @@ $select->execute();
       <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne7" aria-expanded="true"
         aria-controls="collapseOne7">
         <h5 class="mb-0">
-          1 I <i class="fas fa-angle-down rotate-icon"></i>
+          2 I <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -1537,7 +1540,7 @@ $select->execute();
          <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='1I'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='2I'");
 $select->execute();
 ?>
 <div class="container">
@@ -1550,7 +1553,7 @@ $select->execute();
     </div>
     <div class="col-6 col-md-4">
 <select class="form-control"  name="grupo" id="">
-<option value="1I"> 1I </option>
+<option value="2I"> 2I </option>
 </select>
     </div>
   </div>
@@ -1693,7 +1696,7 @@ $select->execute();
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo8"
         aria-expanded="false" aria-controls="collapseTwo8">
         <h5 class="mb-0">
-          1 J <i class="fas fa-angle-down rotate-icon"></i>
+          2 J <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -1703,7 +1706,7 @@ $select->execute();
              <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='1J'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='2J'");
 $select->execute();
 ?>
 <div class="container">
@@ -1717,7 +1720,7 @@ $select->execute();
     </div>
     <div class="col-6 col-md-4">
   <select class="form-control"  name="grupo" id="">
-<option value="1J"> 1J </option>
+<option value="2J"> 2J </option>
 </select>
     </div>
   </div>
@@ -1860,7 +1863,7 @@ $select->execute();
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree9"
         aria-expanded="false" aria-controls="collapseThree9">
         <h5 class="mb-0">
-          1 K <i class="fas fa-angle-down rotate-icon"></i>
+          2 K <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -1870,7 +1873,7 @@ $select->execute();
        <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='1K'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='2K'");
 $select->execute();
 ?>
 <div class="container">
@@ -1883,7 +1886,7 @@ $select->execute();
     </div>
     <div class="col-6 col-md-4">
 <select class="form-control"  name="grupo" id="">
-<option value="1K"> 1K </option>
+<option value="2K"> 2K </option>
 </select>
     </div>
   </div>
@@ -2026,7 +2029,7 @@ $select->execute();
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree10"
         aria-expanded="false" aria-controls="collapseThree10">
         <h5 class="mb-0">
-          1 L <i class="fas fa-angle-down rotate-icon"></i>
+          2 L <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -2046,13 +2049,13 @@ $select->execute();
     </div>
     <div class="col-6 col-md-4">
     <select class="form-control"  name="grupo" id="">
-<option value="1L"> 1L </option>
+<option value="2L"> 2L </option>
 </select>
     </div>
   </div></div>
 <br> 
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='1L'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='2L'");
 $select->execute();
 ?>
 
@@ -2207,7 +2210,7 @@ $select->execute();
 
          <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
-          3A <i class="fas fa-angle-down rotate-icon"></i>
+          4 A <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -2217,7 +2220,7 @@ $select->execute();
       <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='3A'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='4A'");
 $select->execute();
 ?>
 
@@ -2233,7 +2236,7 @@ $select->execute();
     </div>
     <div class="col-6 col-md-4">
     <select class="form-control"  name="grupo" id="">
-<option value="3A"> 3A </option>
+<option value="4A"> 4A </option>
 </select>
     </div>
   </div>
@@ -2380,7 +2383,7 @@ $select->execute();
         aria-expanded="false" aria-controls="collapseTwo14"> 
          <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
-        3 B <i class="fas fa-angle-down rotate-icon"></i>
+        4 B <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -2391,7 +2394,7 @@ $select->execute();
       <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='3B'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='4B'");
 $select->execute();
 ?>
 
@@ -2407,7 +2410,7 @@ $select->execute();
     </div>
     <div class="col-6 col-md-4">
       <select class="form-control"  name="grupo" id="">
-<option value="3B"> 3B </option>
+<option value="4B"> 4B </option>
 </select>
     </div>
   </div>
@@ -2556,7 +2559,7 @@ $select->execute();
 
          <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
-          3 C <i class="fas fa-angle-down rotate-icon"></i>
+          4 C <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -2567,7 +2570,7 @@ $select->execute();
       <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='3C'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='4C'");
 $select->execute();
 ?>
 <div class="container">
@@ -2578,7 +2581,7 @@ $select->execute();
 </select>
     </div>
     <div class="col-sm-4"><select class="form-control"  name="grupo" id="">
-<option value="3C"> 3C </option>
+<option value="4C"> 4C </option>
 </select>
 </div>
   </div>
@@ -2724,7 +2727,7 @@ $select->execute();
         <h5 class="mb-0">
           
            <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
-          3D <i class="fas fa-angle-down rotate-icon"></i>
+          3 D <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -2735,7 +2738,7 @@ $select->execute();
       <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='3D'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='4D'");
 $select->execute();
 ?>
 
@@ -2747,7 +2750,7 @@ $select->execute();
 </select>
     </div>
     <div class="col-sm-4"><select class="form-control"  name="grupo" id="">
-<option value="3D"> 3D </option>
+<option value="4D"> 4D </option>
 </select>
 </div>
   </div>
@@ -2900,7 +2903,7 @@ $select->execute();
       <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne17" aria-expanded="true"
         aria-controls="collapseOne4">
         <h5 class="mb-0">
-          3 E <i class="fas fa-angle-down rotate-icon"></i>
+          4 E <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -2910,7 +2913,7 @@ $select->execute();
         <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='3E'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='4E'");
 $select->execute();
 ?>
 
@@ -2922,7 +2925,7 @@ $select->execute();
 </select>
     </div>
     <div class="col-sm-4"><select class="form-control"  name="grupo" id="">
-<option value="3E"> 3E </option>
+<option value="4E"> 4E </option>
 </select>
 </div>
   </div>
@@ -3065,7 +3068,7 @@ $select->execute();
         aria-expanded="false" aria-controls="collapseTwo18">
          <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
-          3 F <i class="fas fa-angle-down rotate-icon"></i>
+          4 F <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -3075,7 +3078,7 @@ $select->execute();
         <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='3F'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='4F'");
 $select->execute();
 ?>
 
@@ -3087,7 +3090,7 @@ $select->execute();
 </select>
     </div>
     <div class="col-sm-4"><select class="form-control"  name="grupo" id="">
-<option value="3F"> 3F </option>
+<option value="4F"> 4F </option>
 </select>
 </div>
   </div>
@@ -3231,7 +3234,7 @@ $select->execute();
         aria-expanded="false" aria-controls="collapseTwo19"><form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
            
-          3 G <i class="fas fa-angle-down rotate-icon"></i>
+          4 G <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -3242,7 +3245,7 @@ $select->execute();
        
 
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='3G'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='4G'");
 $select->execute();
 ?>
 
@@ -3256,7 +3259,7 @@ $select->execute();
     </div>
     <div class="col-sm-4">
 <select class="form-control"  name="grupo" id="">
-<option value="3G"> 3G </option>
+<option value="4G"> 4G </option>
 </select>
 </div>
   </div>
@@ -3402,7 +3405,7 @@ $select->execute();
         aria-expanded="false" aria-controls="collapseThree20">
          <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
-          3 H <i class="fas fa-angle-down rotate-icon"></i>
+          4 H <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -3412,7 +3415,7 @@ $select->execute();
        <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='3H'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='4H'");
 $select->execute();
 ?>
 
@@ -3426,7 +3429,7 @@ $select->execute();
     </div>
     <div class="col-sm-4">
 <select class="form-control"  name="grupo" id="">
-<option value="3H"> 3H </option>
+<option value="4H"> 4H </option>
 </select>
 </div>
   </div>
@@ -3579,7 +3582,7 @@ $select->execute();
         aria-controls="collapseOne21">
          <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
-          3 I <i class="fas fa-angle-down rotate-icon"></i>
+          4 I <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -3590,7 +3593,7 @@ $select->execute();
          <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='3I'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='4I'");
 $select->execute();
 ?>
 
@@ -3604,7 +3607,7 @@ $select->execute();
     </div>
     <div class="col-sm-4">
 <select class="form-control"  name="grupo" id="">
-<option value="3I"> 3I </option>
+<option value="4I"> 4I </option>
 </select>
 </div>
   </div>
@@ -3934,7 +3937,7 @@ $select->execute();
       <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
           
-          5 A <i class="fas fa-angle-down rotate-icon"></i>
+          6 A <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -3944,7 +3947,7 @@ $select->execute();
       <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='5A'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='6A'");
 $select->execute();
 ?>
 
@@ -3957,7 +3960,7 @@ $select->execute();
     </div>
     <div class="col-sm-4">
 <select class="form-control"  name="grupo" id="">
-<option value="5A"> 5A </option>
+<option value="6A"> 6A </option>
 </select>
 </div>
   </div>
@@ -4103,7 +4106,7 @@ $select->execute();
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo24"
         aria-expanded="false" aria-controls="collapseTwo24">
         <h5 class="mb-0">
-        5 B <i class="fas fa-angle-down rotate-icon"></i>
+        6 B <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -4114,7 +4117,7 @@ $select->execute();
       <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='5B'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='6B'");
 $select->execute();
 ?>
 
@@ -4129,7 +4132,7 @@ $select->execute();
     </div>
     <div class="col-sm-4">
 <select class="form-control"  name="grupo" id="">
-<option value="5B"> 5B </option>
+<option value="6B"> 6B </option>
 </select>
 </div>
   </div>
@@ -4278,7 +4281,7 @@ $select->execute();
         aria-expanded="false" aria-controls="collapseThree25">
          <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
-          5 C <i class="fas fa-angle-down rotate-icon"></i>
+          6 C <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -4289,7 +4292,7 @@ $select->execute();
       <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='5C'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='6C'");
 $select->execute();
 ?>
 
@@ -4302,7 +4305,7 @@ $select->execute();
     </div>
     <div class="col-sm-4">
 <select class="form-control"  name="grupo" id="">
-<option value="5C"> 5C </option>
+<option value="6C"> 6C </option>
 </select>
 </select>
 </div>
@@ -4447,7 +4450,7 @@ $select->execute();
         aria-expanded="false" aria-controls="collapseThree26">
          <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
-          5D <i class="fas fa-angle-down rotate-icon"></i>
+          6 D <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -4458,7 +4461,7 @@ $select->execute();
       <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='5D'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='6D'");
 $select->execute();
 ?>
 
@@ -4470,7 +4473,7 @@ $select->execute();
     </div>
     <div class="col-sm-4">
 <select class="form-control"  name="grupo" id="">
-<option value="5D"> 5D </option>
+<option value="6D"> 6D </option>
 </select>
 </select>
 </div>
@@ -4625,7 +4628,7 @@ $select->execute();
         aria-controls="collapseOne27"> <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
           
-           5 E <i class="fas fa-angle-down rotate-icon"></i>
+           6 E <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -4635,7 +4638,7 @@ $select->execute();
         <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='5E'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='6E'");
 $select->execute();
 ?>
 
@@ -4647,7 +4650,7 @@ $select->execute();
     </div>
     <div class="col-sm-4">
 <select class="form-control"  name="grupo" id="">
-<option value="5E"> 5E </option>
+<option value="6E"> 6E </option>
 </select>
 </select>
 </div>
@@ -4791,7 +4794,7 @@ $select->execute();
         aria-expanded="false" aria-controls="collapseTwo28"><form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
            
-          5 F <i class="fas fa-angle-down rotate-icon"></i>
+          6 F <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -4801,7 +4804,7 @@ $select->execute();
         <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='5F'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='6F'");
 $select->execute();
 ?>
 
@@ -4815,7 +4818,7 @@ $select->execute();
     </div>
     <div class="col-sm-4">
 <select class="form-control"  name="grupo" id="">
-<option value="5F"> 5F </option>
+<option value="6F"> 6F </option>
 </select>
 </div>
   </div>
@@ -4960,7 +4963,7 @@ $select->execute();
          <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
 
-          5 G <i class="fas fa-angle-down rotate-icon"></i>
+          6 G <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -4970,7 +4973,7 @@ $select->execute();
         <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='5G'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='6G'");
 $select->execute();
 ?>
 
@@ -4985,7 +4988,7 @@ $select->execute();
     </div>
     <div class="col-sm-4">
 <select class="form-control"  name="grupo" id="">
-<option value="5G"> 5G </option>
+<option value="6G"> 6G </option>
 </select>
 </div>
   </div>
@@ -5128,7 +5131,7 @@ $select->execute();
         aria-expanded="false" aria-controls="collapseThree30">
          <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
-          5 H <i class="fas fa-angle-down rotate-icon"></i>
+          6 H <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -5138,7 +5141,7 @@ $select->execute();
        <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='5H'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='6H'");
 $select->execute();
 ?>
 <div class="container">
@@ -5151,7 +5154,7 @@ $select->execute();
     <div class="col-sm-4">
 
 <select class="form-control"  name="grupo" id="">
-<option value="5H"> 5H</option>
+<option value="6H"> 6H</option>
 </select>
 </div>
   </div>
@@ -5303,7 +5306,7 @@ $select->execute();
       <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne31" aria-expanded="true"
         aria-controls="collapseOne31"> <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
-          5 I <i class="fas fa-angle-down rotate-icon"></i>
+          6 I <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -5314,20 +5317,20 @@ $select->execute();
          <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='5I'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='6I'");
 $select->execute();
 ?>
 <div class="container">
   <div class="row">
     <div class="col-sm-8">
 <select class="form-control"  name="carrera" id="">
-<option value="5I"> ADMIN-05 </option>
+<option value="6I"> ADMIN-05 </option>
 </select>
     </div>
     <div class="col-sm-4">
 
 <select class="form-control"  name="grupo" id="">
-<option value="5I"> 5I</option>
+<option value="6I"> 6I</option>
 </select>
 </div>
   </div>
@@ -5472,7 +5475,7 @@ $select->execute();
         aria-expanded="false" aria-controls="collapseTwo32">
          <form class="text-center" style="color: #757575;" method="POST" action="agregarRiesgoAlu.php">
         <h5 class="mb-0">
-          5 J <i class="fas fa-angle-down rotate-icon"></i>
+          6 J <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -5482,7 +5485,7 @@ $select->execute();
              <div class="card-body">
         
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='5J'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='6J'");
 $select->execute();
 ?>
 
@@ -5497,7 +5500,7 @@ $select->execute();
     <div class="col-sm-4">
 
 <select class="form-control"  name="grupo" id="">
-<option value="5J"> 5J</option>
+<option value="6J"> 6J</option>
 </select>
 </div>
   </div>
@@ -5638,7 +5641,7 @@ $select->execute();
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree34"
         aria-expanded="false" aria-controls="collapseThree34">
         <h5 class="mb-0">
-          5 K <i class="fas fa-angle-down rotate-icon"></i>
+          6 K <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -5659,7 +5662,7 @@ $select->execute();
     <div class="col-sm-4">
 
 <select class="form-control"  name="grupo" id="">
-<option value="5K"> 5K</option>
+<option value="6K"> 6K</option>
 </select>
 </div>
   </div>
@@ -5668,7 +5671,7 @@ $select->execute();
 <br>
   
  <?php 
-$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='5K'");
+$select=$cnnPDO->prepare("SELECT * FROM alumnos WHERE grupo='6K'");
 $select->execute();
 ?>
 

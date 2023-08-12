@@ -1,4 +1,14 @@
+<?php
+session_start();
+if (isset($_SESSION['user'])) {
 
+    
+} else {
+    header("Location: ../index.php");
+    ob_end_flush();
+    exit(); 
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>

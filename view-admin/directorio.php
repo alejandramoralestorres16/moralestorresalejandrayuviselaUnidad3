@@ -22,9 +22,7 @@ include 'cnn.php';
 <head>
   <title>|| Directorio </title>
 
-   
-<br>
-<link rel="stylesheet" type="text/css" href="bus.css">
+  <link rel="stylesheet" type="text/css" href="bus.css">
   <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -74,6 +72,7 @@ include 'cnn.php';
         
         <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     <!-- Custom styles -->
+   
 </head>
 
 <header>
@@ -97,8 +96,8 @@ include 'cnn.php';
     <li class="nav-item">   
  <a class="nav-link" href="admin.php"  style="color: white"> <i class="fas fa-home"></i> . </a> </strong>
   </li> 
-   <li class="nav-item">   
- <a class="nav-link" href="#" onclick="cerrarSesion()" style="color: white"><i class="fas fa-sign-out-alt"></i> . </a> </strong>
+  <li class="nav-item">   
+ <a class="nav-link" href="impresiones.php"  style="color: white"><i class="fa fa-arrow-left" aria-hidden="true"></i> . </a> </strong>
   </li>
                 </ul>
                
@@ -224,23 +223,7 @@ if ($querysocios -> rowCount() > 0) {
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script type="text/javascript">
 
-  function cerrarSesion(){
-   Swal.fire({
-  title: '¿Estas seguro de querer cerrar tu sesión?',
-  text: "Tendras que iniciar sesión nuevamente!!!",
-  background: 'white',
-  icon: 'warning',
-  showCancelButton: true,
-  confirmButtonColor: '#1F5003',
-  cancelButtonColor: '#d33',
-  confirmButtonText: 'Cerrar sesión',
-  cancelButtonText: 'Cancelar'
-}).then((result) => {
-  if (result.isConfirmed) {
-    window.location = "logout.php";
-  }
-})
-  };
+ 
 </script>
 
                                                        </div>

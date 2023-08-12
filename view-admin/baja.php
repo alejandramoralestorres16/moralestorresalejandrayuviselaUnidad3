@@ -224,8 +224,8 @@ background-color: red;
   <li>   <strong>
  <a class="nav-link" href="eliminaralumno.php" style="color: red">Eliminar del sistema</a>   </strong>
           </li>
-   <li class="nav-item">   
- <a class="nav-link" href="#" onclick="cerrarSesion()" style="color: white"><i class="fas fa-sign-out-alt"></i> . </a> </strong>
+          <li class="nav-item">   
+ <a class="nav-link" href="accionesdealumnos.php"  style="color: white"><i class="fa fa-arrow-left" aria-hidden="true"></i> . </a> </strong>
   </li>
                 </ul>
                
