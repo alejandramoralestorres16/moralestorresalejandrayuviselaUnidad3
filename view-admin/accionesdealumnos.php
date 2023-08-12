@@ -5,23 +5,16 @@ require_once 'cdn.html';
 include 'cnn.php';
 
 
-          $sql=$cnnPDO->prepare('SELECT * FROM administradores WHERE usuario = :usuario');
-
-            $sql->bindParam(':usuario', $_SESSION['usuario']);
-            $sql->execute();
-            
-              $results = $sql -> fetchAll(PDO::FETCH_OBJ);
-
-              foreach ($results as $dato) {
-                
-                $nombre2 = $dato -> nombre;
-           
-              }
+if (@!$_SESSION['user']) {
+	header("Location:../login.php");
+}elseif ($_SESSION['rol']==2) {
+	header("Location:view-u/index2.php");
+}
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>COBAC || Alumnos </title>
+  <title>|| Alumnos </title>
 <link rel="stylesheet" type="text/css" href="bus.css">
   <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -179,7 +172,7 @@ error: function() {
 
   <!-- Copyright -->
   <div class="text-center" style="color: white">
-    © 2021 Developed by:  ALRM
+  
     
   </div>
   
