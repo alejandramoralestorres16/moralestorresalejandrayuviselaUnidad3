@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-
-	<?php
-	session_start();
-	if (@!$_SESSION['user']) {
-		header("Location:index2.php");
-	}elseif ($_SESSION['rol']==1) {
-		header("Location:view-admin/admin.php");
-	}
-	?>
+<?php
+session_start();
+if (@!$_SESSION['user']) {
+	header("Location:login.php");
+}elseif ($_SESSION['rol']==1) {
+	header("Location:view-admin/admin.php");
+  ob_end_flush();
+    exit(); // As
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,7 +81,6 @@
               <ul class="navbar-nav ml-auto">
                 
 
-		      
           
   <li class="nav-item">   <a class="nav-link" style="color: white;"><i class="fas fa-user"></i>  Bienvenido: <strong><?php echo $_SESSION['user'];?></strong>
   </li>  
@@ -108,8 +107,8 @@
   <div class="row">
     <div class="col-6 col-md-4">
     <div class="card text-white bg-danger">
-      <a href="view-admin/agregarRiesgoAlu.php"><img
-        src="view-admin/img/riesgo.png" width="50" height="200"
+      <a href="view-u/agregarRiesgoAlu.php"><img
+        src="view-u/img/riesgo.png" width="50" height="200"
         class="card-img-top"
       
 
@@ -130,14 +129,13 @@
 
     </ul>
 
-	     
       </div>
     </div></a>
     </div>
     <div class="col-6 col-md-4">
     <div class="card text-white bg-warning">
-      <a href="view-admin/accionesdealumnos.php"><img
-        src="view-admin/img/alumnoss.png"
+      <a href="view-u/accionesdealumnos.php"><img
+        src="view-u/img/alumnoss.png"
         class="card-img-top"
         width="50" height="200"
 
@@ -154,8 +152,8 @@
 
     <div class="col-6 col-md-4">
     <div class="card green-text bg-danger">
-      <a href="view-admin/impresiones.php"><img
-        src="view-admin/img/imp.png"
+      <a href="view-u/impresi.php"><img
+        src="view-u/img/imp.png"
         class="card-img-top"
         width="50" height="200"
 
@@ -183,7 +181,7 @@
 </footer>
 
 
- 
+ <!-- MDB -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <!-- Custom scripts -->
   
@@ -215,3 +213,4 @@
 
 </body>
 </html>
+
