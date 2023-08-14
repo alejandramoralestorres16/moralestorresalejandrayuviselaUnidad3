@@ -67,7 +67,7 @@ require_once 'connect_db.php';
       <i class="fas fa-house"></i>
       </a>
 
-      <!-- Notifications -->
+      <!-- Notifications ->
       <div class="dropdown">
         <a
           class="link-secondary me-3 dropdown-toggle hidden-arrow"
