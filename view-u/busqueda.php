@@ -125,16 +125,14 @@ if ($row = mysqli_fetch_array($consulta)) {
     </div>
     <center>
      
-<div class=' '>
+<div class=" col-sm-35 col-md-15 col-lg-11 col-xl-30 ">
   
 
 
 
 
 
-<button onclick="location.href='reinscribir.php'" type="button" class="btn btn-outline-lime bg-dark" data-mdb-ripple-color="dark">
-  REINSCRIBIR
-</button>
+
 
 <button onclick="location.href='reporte.php'" class="btn btn-outline-lime bg-dark" data-mdb-ripple-color="dark">REPORTE</button>
 
@@ -143,7 +141,7 @@ if ($row = mysqli_fetch_array($consulta)) {
 <button onclick="location.href='citatorio.php'" class="btn btn-outline-lime bg-dark" data-mdb-ripple-color="dark">CITATORIO</button>
 
 
-<button onclick="location.href='baja.php'" class="btn btn-outline-lime bg-dark" data-mdb-ripple-color="dark">DAR DE BAJA</button>
+
 
 <button onclick="location.href='historial.php'" class="btn btn-outline-lime bg-dark" data-mdb-ripple-color="dark">HISTORIAL</button>
 
@@ -173,5 +171,4 @@ if ($row = mysqli_fetch_array($consulta)) {
 
 </body>
 </html>
-
 
